@@ -1,0 +1,6 @@
+# Ignore the node_modules folder in the backend
+backend/node_modules/
+
+# Ignore the environment file containing secret API keys
+backend/.env
+
