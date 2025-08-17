@@ -36,7 +36,7 @@ function App() {
         const finalPrompt = `Instruction: ${prompt}\n\nSummarize the following transcript in a ${summaryLength} format.\n\nTranscript:\n${transcript}`;
 
         try {
-            const response = await fetch('http://localhost:3001/summarize', {
+            const response = await fetch('https://ai-meeting-summarizer-sah6.onrender.com/summarize', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: finalPrompt, api: api })
@@ -65,7 +65,7 @@ function App() {
         }
         setMessage('Sending email...');
         try {
-            const response = await fetch('http://localhost:3001/send-email', {
+            const response = await fetch('https://ai-meeting-summarizer-sah6.onrender.com/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -100,7 +100,7 @@ function App() {
             ? `Based on the following meeting summary, please extract all action items and list them in a clear, concise format:\n\n${summary}`
             : `Based on the following meeting summary, please draft a professional follow-up email to the meeting attendees:\n\n${summary}`;
         try {
-            const response = await fetch('http://localhost:3001/summarize', {
+            const response = await fetch('https://ai-meeting-summarizer-sah6.onrender.com/summarize', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ prompt: featurePrompt, api: 'gemini' })
