@@ -102,7 +102,7 @@ function App() {
         try {
             const response = await fetch('https://ai-meeting-summarizer-sah6.onrender.com/summarize', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },    
                 body: JSON.stringify({ prompt: featurePrompt, api: 'gemini' })
             });
             const result = await response.json();
